@@ -1,4 +1,4 @@
-    # Open Library ELT Data Pipeline
+# Open Library ELT Data Pipeline
 
 An end-to-end data engineering project that extracts book metadata from the Open Library API, orchestrates data workflows with Apache Airflow, stores raw data in PostgreSQL, transforms data using dbt, and prepares curated datasets for SQL-based analysis.
 
