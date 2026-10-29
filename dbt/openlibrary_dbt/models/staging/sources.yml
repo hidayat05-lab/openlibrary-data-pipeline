@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "Raw data extracted from Open Library API by Airflow"
+
+    tables:
+      - name: openlibrary_books
+        description: "Raw Open Library book records stored as JSONB"

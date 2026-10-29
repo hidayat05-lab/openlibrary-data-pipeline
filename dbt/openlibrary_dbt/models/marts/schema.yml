@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: mart_books
+    description: "Data mart buku Open Library yang siap digunakan untuk analisis."
+
+    columns:
+      - name: id
+        description: "ID internal record dari raw Open Library."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: book_key
+        description: "Unique identifier buku dari Open Library."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: title
+        description: "Judul buku."
+        data_tests:
+          - not_null
+
+      - name: first_publish_year
+        description: "Tahun pertama buku diterbitkan."
+
+      - name: publication_period
+        description: "Kelompok periode berdasarkan tahun publikasi."
+
+      - name: publication_decade
+        description: "Dekade berdasarkan tahun publikasi."
+
+      - name: edition_count
+        description: "Jumlah edisi buku."
+
+      - name: edition_group
+        description: "Kelompok jumlah edisi buku."
+
+      - name: ebook_available
+        description: "Menunjukkan apakah buku memiliki akses ebook."
+
+      - name: fulltext_status
+        description: "Status ketersediaan full text."

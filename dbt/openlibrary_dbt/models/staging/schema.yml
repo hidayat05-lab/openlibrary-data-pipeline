@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_openlibrary_books
+    description: "Staging layer untuk data buku dari Open Library API."
+
+    columns:
+      - name: id
+        description: "ID internal record dari RAW."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: batch_id
+        description: "ID batch extraction dari Airflow."
+        data_tests:
+          - not_null
+
+      - name: source
+        description: "Sumber data."
+        data_tests:
+          - not_null
+
+      - name: extracted_at
+        description: "Waktu data diekstrak dari API."
+        data_tests:
+          - not_null
+
+      - name: book_key
+        description: "Identifier buku dari Open Library."
+        data_tests:
+          - not_null
+
+      - name: title
+        description: "Judul buku."
+        data_tests:
+          - not_null
+
+      - name: first_publish_year
+        description: "Tahun pertama buku diterbitkan."
+
+      - name: edition_count
+        description: "Jumlah edisi buku."
+
+      - name: ebook_access
+        description: "Status akses ebook."
+
+      - name: has_fulltext
+        description: "Menunjukkan apakah full text tersedia."

@@ -1,0 +1,12 @@
+openlibrary_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_HOST', 'localhost') }}"
+      port: "{{ env_var('DBT_PORT', '5433') | int }}"
+      user: "{{ env_var('DBT_USER', 'etl_user') }}"
+      password: "{{ env_var('DBT_PASSWORD', 'etl_password') }}"
+      dbname: "{{ env_var('DBT_DBNAME', 'etl_database') }}"
+      schema: "{{ env_var('DBT_SCHEMA', 'analytics') }}"
+      threads: 4
